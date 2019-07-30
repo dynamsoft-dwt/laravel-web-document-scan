@@ -24,7 +24,7 @@
         }];
         Dynamsoft.WebTwainEnv.RegisterEvent('OnWebTwainReady', Dynamsoft_OnReady);
         Dynamsoft.WebTwainEnv.Trial = true;
-        Dynamsoft.WebTwainEnv.ProductKey = "t0112CQIAACQe1WlX/Q85HmzoVkSaQt8ZDLPBybGXRm1EKKxjG6rPKIQPoAsKOp7vPaYcFJGNUUsWxKbYEUzaAdFIA8tQzj8IvT8nzEwdHRj2eqVi4o/Z9LOXdup496Cx4YSJYyPDeYjW7p4MNhEX2QFocg==";
+        Dynamsoft.WebTwainEnv.ProductKey = "LICENSE-KEY";
         Dynamsoft.WebTwainEnv.Load();
 
         function Dynamsoft_OnReady() {
