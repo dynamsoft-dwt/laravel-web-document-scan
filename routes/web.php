@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dwt_upload', 'DWTUploadController@index');
+Route::get('/dwt_upload', 'DWTUploadController@page');
 
-Route::post('/dwt_upload/action', 'DWTUploadController@action')->name('dwtupload.action');
+Route::post('/dwt_upload/upload', 'DWTUploadController@upload')->name('dwtupload.upload');

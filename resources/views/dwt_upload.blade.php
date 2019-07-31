@@ -64,7 +64,7 @@
 
             var date = new Date();
             DWObject.HTTPUploadThroughPostEx(
-                "{{ route('dwtupload.action') }}",
+                "{{ route('dwtupload.upload') }}",
                 DWObject.CurrentImageIndexInBuffer,
                 '',
                 date.getTime() + ".jpg",

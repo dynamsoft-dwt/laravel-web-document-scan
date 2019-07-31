@@ -7,12 +7,12 @@ use Validator;
 
 class DWTUploadController extends Controller
 {
-    function index()
+    function page()
     {
      return view('dwt_upload');
     }
 
-    function action(Request $request)
+    function upload(Request $request)
     {
      $validation = Validator::make($request->all(), [
       'RemoteFile' => 'required|image|mimes:png,pdf,jpeg,jpg,gif'
