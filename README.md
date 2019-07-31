@@ -35,3 +35,6 @@ Open `http://127.0.0.1:8000/dwt_upload` in your web browser.
 
 ## Reference
 - https://laravel.com/docs/5.8
+
+## Blog
+[Uploading Scanned Documents in Windows 10 Laravel Project](https://www.codepool.biz/upload-document-image-laravel-windows.html)
