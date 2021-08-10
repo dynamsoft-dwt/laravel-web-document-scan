@@ -3,7 +3,8 @@
 
 <head>
     <title>Dynamic Web TWAIN for Laravel</title>
-    <script type="text/javascript" src="http://tst.dynamsoft.com/libs/dwt/15.0/dynamsoft.webtwain.min.js"> </script>
+    <script src="{{ asset('Resources/dynamsoft.webtwain.initiate.js') }}" ></script>
+    <script src="{{ asset('Resources/dynamsoft.webtwain.config.js') }}" ></script>
     <meta name="_token" content="{{csrf_token()}}" />
 </head>
 
@@ -16,19 +17,17 @@
 
     <script>
         var DWObject;
-        Dynamsoft.WebTwainEnv.AutoLoad = false;
-        Dynamsoft.WebTwainEnv.Containers = [{
+        Dynamsoft.DWT.Containers = [{
             ContainerId: 'dwtcontrolContainer',
             Width: '480px',
             Height: '640px'
         }];
-        Dynamsoft.WebTwainEnv.RegisterEvent('OnWebTwainReady', Dynamsoft_OnReady);
-        Dynamsoft.WebTwainEnv.Trial = true;
-        Dynamsoft.WebTwainEnv.ProductKey = "LICENSE-KEY";
-        Dynamsoft.WebTwainEnv.Load();
+        Dynamsoft.DWT.RegisterEvent('OnWebTwainReady', Dynamsoft_OnReady);
+        Dynamsoft.DWT.ProductKey = "LICENSE-KEY";
+        Dynamsoft.DWT.Load();
 
         function Dynamsoft_OnReady() {
-            DWObject = Dynamsoft.WebTwainEnv.GetWebTwain('dwtcontrolContainer');
+            DWObject = Dynamsoft.DWT.GetWebTwain('dwtcontrolContainer');
             var token = document.querySelector("meta[name='_token']").getAttribute("content");
             DWObject.SetHTTPFormField('_token', token);
         }
@@ -39,7 +38,7 @@
 
             if (DWObject) {
                 DWObject.IfShowFileDialog = true;
-                DWObject.LoadImageEx("", EnumDWT_ImageType.IT_ALL, OnSuccess, OnFailure);
+                DWObject.LoadImageEx("", Dynamsoft.DWT.EnumDWT_ImageType.IT_ALL, OnSuccess, OnFailure);
             }
         }
 

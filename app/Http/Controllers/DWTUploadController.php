@@ -15,8 +15,9 @@ class DWTUploadController extends Controller
     function upload(Request $request)
     {
      $validation = Validator::make($request->all(), [
-      'RemoteFile' => 'required|image|mimes:png,pdf,jpeg,jpg,gif'
+      'RemoteFile' => 'required'
      ]);
+
      if($validation->passes())
      {
       $image = $request->file('RemoteFile');
